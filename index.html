@@ -6,6 +6,12 @@
 		// TODO: create a handler
     window.addEventListener("load", function(){
         // TODO: register the handler
+		let button = document.getElementById("go");
+		button.addEventListener("click", function(event){
+			event.preventDefault();
+			const engine = document.querySelector('input[name=engine]:checked')
+			console.log(engine.value);
+		});
     });
 	</script>
 </head>
@@ -14,6 +20,13 @@
 
 	<form id="searchForm">
     <!-- TODO: add form elements -->
+	<input type="text" name="q">
+	<label><input type="radio" name="engine" value="google">Google</label>
+	<label><input type="radio" name="engine" value="duckduckdo">DuckDuckGo</label>
+	<label><input type="radio" name="engine" value="bing">Bing</label>
+	<label><input type="radio" name="engine" value="ask">Ask</label>
+	<button id="go">Go</button>
+
 	</form>
 
 </body>
